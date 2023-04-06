@@ -1,8 +1,6 @@
 package transaccion;
 
 import java.time.LocalDate;
-import java.util.List;
-import prenda.Prenda;
 
 public class TransaccionTarjeta extends Transaccion {
 
@@ -12,14 +10,13 @@ public class TransaccionTarjeta extends Transaccion {
   /**
    * Constructor.
    *
-   * @param prendas     lista de prendas compradas.
    * @param fecha       la fecha de la transaccion.
    * @param cuotas      la cantidad de cuotas.
    * @param coeficiente el coeficiente fijo asociado al calculo.
    */
-  public TransaccionTarjeta(List<Prenda> prendas, LocalDate fecha, Short cuotas,
+  public TransaccionTarjeta(LocalDate fecha, Short cuotas,
                             Double coeficiente) {
-    super(prendas, fecha);
+    super(fecha);
     this.cuotas = cuotas;
     this.coeficiente = coeficiente;
   }
