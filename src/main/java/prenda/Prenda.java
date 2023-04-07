@@ -2,6 +2,9 @@ package prenda;
 
 import prenda.descuentoestado.DescuentoEstado;
 
+/**
+ * Clase que representa una prenda.
+ */
 public class Prenda {
   private final Double precioBase;
   private final TipoPrendaEnum tipo;

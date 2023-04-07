@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import prenda.Prenda;
 
+/**
+ * Clase que representa una transaccion de cualquier tipo.
+ */
 public abstract class Transaccion {
   protected List<Prenda> prendas = new ArrayList<>();
 

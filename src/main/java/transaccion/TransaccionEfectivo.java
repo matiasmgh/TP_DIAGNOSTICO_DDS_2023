@@ -3,6 +3,9 @@ package transaccion;
 import java.time.LocalDate;
 import prenda.Prenda;
 
+/**
+ * Clase para transacciones en efectivo.
+ */
 public class TransaccionEfectivo extends Transaccion {
 
   public TransaccionEfectivo(LocalDate fecha) {

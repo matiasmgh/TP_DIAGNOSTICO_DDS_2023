@@ -30,4 +30,11 @@ public class PrendaTest {
 
     assertEquals(10.0, prenda.getPrecio());
   }
+
+  @Test
+  public void getTipoWithPrendaCamisa() {
+    prenda = new Prenda(10.0, TipoPrendaEnum.CAMISA, new DescuentoPrendaNueva());
+
+    assertEquals(TipoPrendaEnum.CAMISA, prenda.getTipo());
+  }
 }

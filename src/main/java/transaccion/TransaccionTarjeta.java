@@ -2,6 +2,9 @@ package transaccion;
 
 import java.time.LocalDate;
 
+/**
+ * Clase para transacciones por tarjeta.
+ */
 public class TransaccionTarjeta extends Transaccion {
 
   private final Short cuotas;

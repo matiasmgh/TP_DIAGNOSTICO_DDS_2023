@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import transaccion.Transaccion;
 
+/**
+ * Clase para las ventas totales.
+ */
 public class Ventas {
 
   private final List<Transaccion> ventas = new ArrayList<>();
