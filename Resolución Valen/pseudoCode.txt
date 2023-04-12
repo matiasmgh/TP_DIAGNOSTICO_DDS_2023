@@ -1,6 +1,6 @@
 class Local{
-    List<Venta> historialVentas;
-    Bool esDeFecha(Venta venta, LocalDate fechaBuscada){
+    List<venta> historialVentas;
+    Bool esDeFecha(venta venta, LocalDate fechaBuscada){
         return venta.getFecha().compareTo(fechaBuscada)==0
     }
     Double gananciaFecha(LocalDate fechaBuscada){
@@ -10,7 +10,7 @@ class Local{
     }
 }
 
-class Venta{
+class venta{
   List<Item> items;
   MedioDePago mediodepago;
   LocalDate fecha
@@ -23,7 +23,7 @@ class Venta{
 }
 
 class Item{
-  Prenda prenda;
+  prenda prenda;
   int cantidad;
   Double precioItem(){
     return prenda*cantidad;
@@ -36,7 +36,7 @@ enum TipoPrenda{
     Camisa
 }
 
-class Prenda{
+class prenda{
   TipoPrenda tipoPrenda;
   Double precioBase;
   Estado estado;

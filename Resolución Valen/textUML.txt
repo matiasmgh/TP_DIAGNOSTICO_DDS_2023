@@ -1,28 +1,33 @@
 @startuml
+
+skinparam class {
+BackgroundColor PaleGreen
+ArrowColor SeaGreen
+BorderColor SpringGreen
+}
+
 class Local{
-  List<Venta> historialVentas
-  Bool esDeFecha(Venta, LocalDate)
+  List<venta> historialVentas
+  Bool esDeFecha(venta, LocalDate)
   Double gananciasFecha(LocalDate)
 }
 
-class Venta{
+class venta{
   List<Item> items
   MedioDePago mediodepago
   LocalDate fecha
   Double precioFinal()
 }
 
-Local -right->"*" Venta
-
-Local --> Venta
+Local -right->"*" venta
 
 class Item{
-  Prenda prenda
+  prenda prenda
   int cantidad
   Double precioItem()
 }
 
-Venta -->"*" Item
+venta -->"*" Item
 
 enum TipoPrenda{
   Saco
@@ -30,22 +35,22 @@ enum TipoPrenda{
   Camisa
 }
 
-Prenda -->"1" TipoPrenda
+prenda -->"1" TipoPrenda
 
-class Prenda{
+class prenda{
   TipoPrenda tipoPrenda
   Double precioBase
   Estado estado
   Double precioPrenda()
 }
 
-Item -->"1" Prenda
+Item -->"1" prenda
 
 interface Estado{
   modificarPrecio(Double)
 }
 
-Prenda -->"1" Estado
+prenda -->"1" Estado
 
 class EstadoNueva{}
 class EstadoPromo{
@@ -61,7 +66,7 @@ interface MedioDePago{
   Double modificarPrecio(Double)
 }
 
-Venta -->"1" MedioDePago
+venta -->"1" MedioDePago
 
 class PagoEfectivo{
 }

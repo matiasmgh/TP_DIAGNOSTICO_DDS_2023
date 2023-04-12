@@ -1,40 +1,42 @@
 package prenda;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import prenda.descuentoestado.DescuentoPrendaLiquidacion;
-import prenda.descuentoestado.DescuentoPrendaNueva;
-import prenda.descuentoestado.DescuentoPrendaPromocion;
+import prenda.estado.EstadoLiquidacion;
+import prenda.estado.EstadoNueva;
+import prenda.estado.EstadoPromocion;
 
+/**
+ * Clase para testear la clase Prenda.
+ */
 public class PrendaTest {
 
-  private Prenda prenda;
+  private static Prenda prendaNueva;
+  private static Prenda prendaLiquidacion;
 
-  @Test
-  public void getPrecioTestWithLiquidacion() {
-    prenda = new Prenda(10.0, TipoPrendaEnum.CAMISA, new DescuentoPrendaLiquidacion());
+  private static Prenda prendaPromocion;
 
-    assertEquals(5.0, prenda.getPrecio());
+  @BeforeAll
+  public static void setUp() {
+    prendaPromocion = new Prenda(TipoPrendaEnum.PANTALON, 100.0,
+        new EstadoPromocion(20.0));
+    prendaNueva = new Prenda(TipoPrendaEnum.SACO, 100.0, new EstadoNueva());
+    prendaLiquidacion = new Prenda(TipoPrendaEnum.SACO, 100.0, new EstadoLiquidacion());
   }
 
   @Test
-  public void getPrecioTestWithPromocion() {
-    prenda = new Prenda(10.0, TipoPrendaEnum.CAMISA, new DescuentoPrendaPromocion(0.20));
-
-    assertEquals(8.0, prenda.getPrecio());
+  public void testCalcularPrecioPrendaWithEstadoPromocion() {
+    assertEquals(80.0, prendaPromocion.calcularPrecioPrenda());
   }
 
   @Test
-  public void getPrecioTestWithProductoNuevo() {
-    prenda = new Prenda(10.0, TipoPrendaEnum.CAMISA, new DescuentoPrendaNueva());
-
-    assertEquals(10.0, prenda.getPrecio());
+  public void testCalcularPrecioPrendaWithEstadoNuevo() {
+    assertEquals(100.0, prendaNueva.calcularPrecioPrenda());
   }
 
   @Test
-  public void getTipoWithPrendaCamisa() {
-    prenda = new Prenda(10.0, TipoPrendaEnum.CAMISA, new DescuentoPrendaNueva());
-
-    assertEquals(TipoPrendaEnum.CAMISA, prenda.getTipo());
+  public void testCalcularPrecioPrendaWithEstadoLiquidacion() {
+    assertEquals(50.0, prendaLiquidacion.calcularPrecioPrenda());
   }
 }

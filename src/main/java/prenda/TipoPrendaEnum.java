@@ -1,10 +1,10 @@
 package prenda;
 
 /**
- * Clase para los tipos de prenda.
+ * Enum con los tipos de prenda posibles.
  */
 public enum TipoPrendaEnum {
-    SACO,
-    PANTALON,
-    CAMISA
+  SACO,
+  PANTALON,
+  CAMISA
 }

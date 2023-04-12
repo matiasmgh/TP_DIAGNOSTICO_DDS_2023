@@ -1,34 +1,34 @@
 package prenda;
 
-import prenda.descuentoestado.DescuentoEstado;
+import prenda.estado.EstadoPrenda;
 
 /**
  * Clase que representa una prenda.
  */
 public class Prenda {
-  private final Double precioBase;
-  private final TipoPrendaEnum tipo;
-  private final DescuentoEstado estado;
+  TipoPrendaEnum tipoPrenda;
+  Double precioBase;
+  EstadoPrenda estado;
 
   /**
    * Constructor completo.
    *
+   * @param tipoPrenda tipo de la prenda.
    * @param precioBase el precio base de la prenda.
-   * @param tipo       el tipo de la prenda.
-   * @param estado     el estado/descuento de la prenda.
+   * @param estado     el estado de promocion de la prenda.
    */
-  public Prenda(Double precioBase, TipoPrendaEnum tipo, DescuentoEstado estado) {
+  public Prenda(TipoPrendaEnum tipoPrenda, Double precioBase, EstadoPrenda estado) {
+    this.tipoPrenda = tipoPrenda;
     this.precioBase = precioBase;
-    this.tipo = tipo;
     this.estado = estado;
   }
 
-  public Double getPrecio() {
-    return precioBase - precioBase * estado.getDescuento();
+  /**
+   * Calcula el precio de la prenda considerando su estado.
+   *
+   * @return el precio de la prenda.
+   */
+  public Double calcularPrecioPrenda() {
+    return estado.modificarPrecio(precioBase);
   }
-
-  public TipoPrendaEnum getTipo() {
-    return tipo;
-  }
-
 }
