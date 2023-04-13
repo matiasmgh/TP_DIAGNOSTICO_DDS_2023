@@ -1,8 +1,16 @@
 # TP Diagnostico de Diseño de Sistemas
 
+## Realizado por el Grupo 5. 
+Integrantes:
+* Matias Gaiteiro Harriague
+* Nazareno López Zmijak
+* Dylan Losada
+* Guido Siverio
+* Valentín Román Vallejos
+
 ## Ejercicio Macowins
 
-**¿Cuales son los requisitos?**
+### ¿Cuales son los requisitos?
 
 1. Conocer el precio de una prenda y su tipo.
 2. Registrar ventas
@@ -10,9 +18,8 @@
 
 ## Solución Propuesta:
 
-El archivo editable se encuentra en el directorio principal del repo.
+Elegimos el siguiente diseño.
 
-![macowins_diagrama_clases drawio](https://user-images.githubusercontent.com/73591562/230435018-b2a310cb-a034-4a92-8de7-5e4142f360b6.png)
-
+![classDiagram.png](Resolucion_Valen%2FclassDiagram.png)
 
 
