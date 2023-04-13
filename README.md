@@ -20,6 +20,6 @@ Integrantes:
 
 Elegimos el siguiente diseño.
 
-![UMLDiagram.png](Resolucion_Valen%2FclassDiagram.png)
+![UMLDiagram.png](src%2FUMLDiagram.png)
 
 
