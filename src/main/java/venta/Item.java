@@ -22,8 +22,9 @@ public class Item {
   }
 
   /**
-   * Calcula el precio del item tomando en cuenta la cantidad.
-   * No contempla recargos por medio de pago.
+   * Calcula el precio del item tomando en cuenta la cantidad. No contempla recargos por
+   * medio de pago.
+   *
    * @return el precio del item.
    */
   public Double calcularPrecioItem() {

@@ -31,4 +31,13 @@ public class Prenda {
   public Double calcularPrecioPrenda() {
     return estado.modificarPrecio(precioBase);
   }
+
+  /**
+   * Obtiene el tipo de prenda.
+   *
+   * @return el tipo de la prenda.
+   */
+  public TipoPrendaEnum getTipoPrenda() {
+    return tipoPrenda;
+  }
 }

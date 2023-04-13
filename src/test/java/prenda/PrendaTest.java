@@ -39,4 +39,9 @@ public class PrendaTest {
   public void testCalcularPrecioPrendaWithEstadoLiquidacion() {
     assertEquals(50.0, prendaLiquidacion.calcularPrecioPrenda());
   }
+
+  @Test
+  public void testTipoPrenda() {
+    assertEquals(TipoPrendaEnum.PANTALON, prendaPromocion.getTipoPrenda());
+  }
 }
