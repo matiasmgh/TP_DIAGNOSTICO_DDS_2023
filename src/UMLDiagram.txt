@@ -1,0 +1,93 @@
+@startuml
+
+skinparam class {
+BackgroundColor PaleGreen
+ArrowColor SeaGreen
+BorderColor SpringGreen
+}
+
+class Local{
+  List<venta> historialVentas
+  Double calcularGananciasPorFecha(LocalDate fecha)
+  void agregarVenta(Venta venta)
+}
+
+class venta{
+  List<Item> items
+  MedioDePago mediodepago
+  LocalDate fecha
+  + Double calcularPrecioFinal()
+  + void agregarItem(Item item)
+  + Boolean esDeFecha(LocalDate fecha)
+  - Double calcularSubTotal()
+}
+
+Local -right->"*" venta
+
+class Item{
+  prenda prenda
+  int cantidad
+  Double calcularPrecioItem()
+}
+
+venta -->"*" Item
+
+enum TipoPrenda{
+  Saco
+  Pantalon
+  Camisa
+}
+
+prenda -->"1" TipoPrenda
+
+class prenda{
+  TipoPrenda tipoPrenda
+  Double precioBase
+  Estado estado
+  Double calcularPrecioPrenda()
+}
+
+Item -->"1" prenda
+
+interface EstadoPrenda{
+  Double modificarPrecio(Double precio)
+}
+
+prenda -->"1" Estado
+
+class EstadoNueva{
+    Double modificarPrecio(Double precio)
+}
+
+class EstadoPromo{
+  Double modificarPrecio(Double precio)
+}
+
+class EstadoLiquidacion{
+    Double modificarPrecio(Double precio)
+}
+
+Estado <.- EstadoNueva
+Estado <.- EstadoPromo
+Estado <.- EstadoLiqui
+
+interface MedioDePago{
+  Double modificarPrecio(Double precio)
+}
+
+venta -->"1" MedioDePago
+
+class PagoEfectivo{
+    Double modificarPrecio(Double precio)
+}
+
+
+class PagoTarjeta{
+  int cantCuotas
+  Double coeficienteFijo
+  Double modificarPrecio(Double precio)
+}
+
+MedioDePago <.- PagoEfectivo
+MedioDePago <.- PagoTarjeta
+@enduml
