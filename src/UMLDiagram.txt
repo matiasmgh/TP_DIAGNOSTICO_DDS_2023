@@ -53,13 +53,13 @@ interface EstadoPrenda{
   Double modificarPrecio(Double precio)
 }
 
-prenda -->"1" Estado
+prenda -->"1" EstadoPrenda
 
 class EstadoNueva{
     Double modificarPrecio(Double precio)
 }
 
-class EstadoPromo{
+class EstadoPromocion{
   Double modificarPrecio(Double precio)
 }
 
@@ -67,9 +67,9 @@ class EstadoLiquidacion{
     Double modificarPrecio(Double precio)
 }
 
-Estado <.- EstadoNueva
-Estado <.- EstadoPromo
-Estado <.- EstadoLiqui
+EstadoPrenda <.- EstadoNueva
+EstadoPrenda <.- EstadoPromocion
+EstadoPrenda <.- EstadoLiquidacion
 
 interface MedioDePago{
   Double modificarPrecio(Double precio)
