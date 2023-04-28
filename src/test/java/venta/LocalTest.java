@@ -36,4 +36,5 @@ public class LocalTest {
   public void testCalcularGananciasPorFecha() {
     assertEquals(100.0, local.calcularGananciasPorFecha(LocalDate.now()));
   }
+
 }

@@ -1,11 +1,5 @@
 @startuml
 
-skinparam class {
-BackgroundColor PaleGreen
-ArrowColor SeaGreen
-BorderColor SpringGreen
-}
-
 class Local{
   List<venta> historialVentas
   Double calcularGananciasPorFecha(LocalDate fecha)

@@ -31,4 +31,5 @@ public class Local {
   public void agregarVenta(Venta venta) {
     this.historialVentas.add(venta);
   }
+
 }

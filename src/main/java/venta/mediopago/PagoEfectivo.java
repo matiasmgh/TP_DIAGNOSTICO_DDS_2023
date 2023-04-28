@@ -10,4 +10,5 @@ public class PagoEfectivo implements MedioPago {
     // No hay cargos extra.
     return precio;
   }
+
 }

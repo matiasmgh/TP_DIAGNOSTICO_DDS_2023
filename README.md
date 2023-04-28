@@ -1,12 +1,4 @@
-# TP Diagnostico de Diseño de Sistemas
-
-## Realizado por el Grupo 5. 
-Integrantes:
-* Matias Gaiteiro Harriague
-* Nazareno López Zmijak
-* Dylan Losada
-* Guido Siverio
-* Valentín Román Vallejos
+<!-- @format -->
 
 ## Ejercicio Macowins
 
@@ -21,5 +13,3 @@ Integrantes:
 Elegimos el siguiente diseño.
 
 ![UMLDiagram.png](src%2FUMLDiagram.png)
-
-
